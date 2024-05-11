@@ -46,7 +46,7 @@ export default function Form() {
       setUploading(false);
       alert("Form submitted successfully!");
       const success = response.status === 200;
-      if (success) router.push("/findpet");
+      if (success) router.push("/admin");
     } catch (error) {
       alert("Something went wrong!");
       console.log(error);

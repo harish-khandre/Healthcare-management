@@ -50,7 +50,7 @@ export default function UserButton({ user }: UserButtonProps) {
               </Link>
             </DropdownMenuItem>
           )}
-          {user.role === "hospital" && (
+          {user.role === "Hospital" && (
             <DropdownMenuItem asChild>
               <Link href="/hospital">
                 <Hospital className="mr-2 h-4 w-4" />

@@ -3,7 +3,6 @@ import prisma from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
-  console.log(formData);
   const name = formData.get("name");
   const number = formData.get("number");
   const description = formData.get("description");
