@@ -22,30 +22,30 @@ model User {
 }
 
 model Hospital {
-  id            String        @id @default(cuid())
-  name          String?
-  description   String?
-  email         String        @unique
-  number        String?       @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  role          String?
-  department    String?
-  appointments  Appointment[]
+  id           String        @id @default(cuid())
+  name         String?
+  email        String?       @unique
+  description  String?
+  number       String?       @unique
+  image        String?
+  role         String?
+  department   String?
+  appointments Appointment[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  Account Account[]
+  Session Session[]
 }
 
 model Appointment {
-  id            String    @id @default(cuid())
+  id            String   @id @default(cuid())
   patientName   String
   patientEmail  String
   patientNumber String
-  hospitalEmail String?
-  Hospital      Hospital? @relation(fields: [hospitalEmail], references: [email])
+  hospitalEmail String
+  Hospital      Hospital @relation(fields: [hospitalEmail], references: [email])
 }
 
 model Account {

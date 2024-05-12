@@ -16,6 +16,15 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    await prisma.user.update({
+      where: {
+        email: email as string,
+      },
+      data: {
+        role: role as string,
+      },
+    });
+
     const hospital = await prisma.hospital.create({
       data: {
         name: name as string,
@@ -31,6 +40,6 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify(hospital), { status: 200 });
   } catch (error) {
     console.error(error);
-    return new Response("Error creating hospital", { status: 500 });
+    return new Response("Error creating/updating hospital", { status: 500 });
   }
 }
