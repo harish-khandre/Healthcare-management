@@ -32,7 +32,7 @@ export default async function Navbar() {
           <a className="mr-5 hover:text-gray-900">First Link</a>
           <a className="mr-5 hover:text-gray-900">Second Link</a>
           <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+          <a className="mr-5 hover:text-gray-900">Chat with AI Doctor</a>
         </nav>
         {user ? <UserButton user={user} /> : <SignInButton />}
       </div>

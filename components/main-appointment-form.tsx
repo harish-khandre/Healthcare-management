@@ -1,25 +1,19 @@
 "use client";
-
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "./ui/button";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-export default function AppointmentForm({
-  hospitalEmail,
-}: {
-  hospitalEmail: string;
-}) {
+export default function MAF({ hospitalEmail }: { hospitalEmail: string }) {
   const [patientName, setPatientName] = useState("");
   const [patientNumber, setPatientNumber] = useState("");
   const [patientEmail, setPatientEmail] = useState("");
@@ -57,17 +51,13 @@ export default function AppointmentForm({
     }
   };
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="default">Make Appointment</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Make Appointment</DialogTitle>
-          <DialogDescription>
-            Fill in the form below to get your appointment
-          </DialogDescription>
-        </DialogHeader>
+    <div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Appointment Form</CardTitle>
+        </CardHeader>
+        <CardContent>
+
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
@@ -110,8 +100,9 @@ export default function AppointmentForm({
             </Button>
           </div>
         </form>
-        <DialogFooter>Hospital will contact you shortly</DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </CardContent>
+        <CardFooter>Hospital will contact you shortly</CardFooter>
+      </Card>
+    </div>
   );
 }

@@ -1,43 +1,42 @@
 import prisma from "@/lib/prisma";
-import AppointmentForm from "./appointment-form";
+import Link from "next/link";
 
 const BlogCard = ({
+  id,
   image,
   name,
   department,
   description,
   number,
   email,
-  id,
 }: any) => {
   return (
     <div className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="lg:h-48 md:h-36 w-full object-cover object-center"
-        />
-        <div className="p-6">
-          <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-            {department}
-          </h2>
-          <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            {name}
-          </h1>
-          <p className="leading-relaxed mb-3">{description}</p>
-          <p className="leading-relaxed mb-3">{email}</p>
-          <p className="leading-relaxed mb-3">{number}</p>
-          <div className="flex items-center flex-wrap">
-            <AppointmentForm hospitalEmail={email} />
+        <Link href={`/h/${id}`}>
+          <img
+            src={image}
+            alt={name}
+            className="lg:h-48 md:h-36 w-full object-cover object-center"
+          />
+          <div className="p-6">
+            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+              {department}
+            </h2>
+            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
+              {name}
+            </h1>
+            <p className="leading-relaxed mb-3">{description}</p>
+            <p className="leading-relaxed mb-3">{email}</p>
+            <p className="leading-relaxed mb-3">{number}</p>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
 };
 
-const BlogSection = async () => {
+const Hospitals = async () => {
   const blogData = await prisma.hospital.findMany();
 
   return (
@@ -47,6 +46,7 @@ const BlogSection = async () => {
           {blogData.map((data, index) => (
             <BlogCard
               key={index}
+              id={data.id}
               image={data.image}
               name={data.name}
               email={data.email}
@@ -62,4 +62,4 @@ const BlogSection = async () => {
   );
 };
 
-export default BlogSection;
+export default Hospitals;
