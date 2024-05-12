@@ -44,8 +44,8 @@ model Appointment {
   patientName   String
   patientEmail  String
   patientNumber String
-  Hospital      Hospital? @relation(fields: [hospitalId], references: [id])
-  hospitalId    String?
+  hospitalEmail String?
+  Hospital      Hospital? @relation(fields: [hospitalEmail], references: [email])
 }
 
 model Account {

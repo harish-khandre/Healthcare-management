@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
   const name = formData.get("name");
   const number = formData.get("number");
   const email = formData.get("email");
-  const hospitalId = formData.get("hospitalId");
+  const hospitalEmail = formData.get("hospitalEmail");
 
   if (!name) {
     return new Response("Please enter name", { status: 400 });
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         patientName: name as string,
         patientNumber: number as string,
         patientEmail: email as string,
-        hospitalId: hospitalId as string,
+        hospitalEmail: hospitalEmail as string,
       },
     });
 

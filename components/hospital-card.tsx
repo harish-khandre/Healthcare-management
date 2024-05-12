@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import Image from "next/image";
 import AppointmentForm from "./appointment-form";
 
 const BlogCard = ({
@@ -14,11 +13,9 @@ const BlogCard = ({
   return (
     <div className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-        <Image
+        <img
           src={image}
           alt={name}
-          width={720}
-          height={400}
           className="lg:h-48 md:h-36 w-full object-cover object-center"
         />
         <div className="p-6">
@@ -32,7 +29,7 @@ const BlogCard = ({
           <p className="leading-relaxed mb-3">{email}</p>
           <p className="leading-relaxed mb-3">{number}</p>
           <div className="flex items-center flex-wrap">
-            <AppointmentForm hospitalId={id} />
+            <AppointmentForm hospitalEmail={email} />
           </div>
         </div>
       </div>
@@ -56,7 +53,7 @@ const BlogSection = async () => {
               number={data.number}
               department={data.department}
               description={data.description}
-              id={data.id}
+              hospitalEmail={data.email}
             />
           ))}
         </div>

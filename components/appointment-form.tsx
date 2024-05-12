@@ -16,9 +16,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function AppointmentForm({
-  hospitalId,
+  hospitalEmail,
 }: {
-  hospitalId: string;
+  hospitalEmail: string;
 }) {
   const [patientName, setPatientName] = useState("");
   const [patientNumber, setPatientNumber] = useState("");
@@ -33,7 +33,7 @@ export default function AppointmentForm({
     formData.append("name", patientName);
     formData.append("number", patientNumber);
     formData.append("email", patientEmail);
-    formData.append("hospitalId", hospitalId);
+    formData.append("hospitalEmail", hospitalEmail);
 
     try {
       const response = await fetch("/api/appointment", {
@@ -59,7 +59,7 @@ export default function AppointmentForm({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="default">Make Appointment</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

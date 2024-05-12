@@ -1,4 +1,4 @@
-import { Hospital, Lock, LogOut, Settings } from "lucide-react";
+import { Hospital, Lock, LogOut } from "lucide-react";
 import { User } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,12 +36,6 @@ export default function UserButton({ user }: UserButtonProps) {
         <DropdownMenuLabel>{user.name || "User"}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem asChild>
-            <Link href="/settings">
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-            </Link>
-          </DropdownMenuItem>
           {user.role === "admin" && (
             <DropdownMenuItem asChild>
               <Link href="/admin">

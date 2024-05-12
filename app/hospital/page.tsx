@@ -1,26 +1,33 @@
+import { AppointmentTable } from "@/components/appointment-table";
 import getSession from "@/lib/get-session";
 import prisma from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export default async function Hospital() {
   const session = await getSession();
-  const id = session?.user.id;
+  const user = session?.user;
+
+  if (!user) {
+    redirect("/api/auth/signin?callbackUrl=/admin");
+  }
+
+  if (user?.role !== "Hospital") {
+    return (
+      <main className="mx-auto my-10">
+        <p className="text-center">You are not authorized to view this page</p>
+      </main>
+    );
+  }
 
   const appointments = await prisma.appointment.findMany({
     where: {
-      hospitalId: id,
+      hospitalEmail: user?.email,
     },
   });
+
   return (
-    <div>
-      {appointments.map((appointment) => (
-        <div>
-          <h1>{appointment.patientName}</h1>
-          <p>{appointment.patientNumber}</p>
-          <p>{appointment.patientEmail}</p>
-        </div>
-      ))}
+    <div className="flex justify-center items-start h-fit w-[80%] mx-auto my-2">
+      <AppointmentTable appointments={appointments} />
     </div>
   );
 }
-
-//TODO: Add list of appointments checking and archiving

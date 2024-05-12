@@ -10,7 +10,7 @@ export default function Form() {
   const [image, setImage] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [despcription, setDescription] = useState("");
+  const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
 
   const router = useRouter();
@@ -21,7 +21,7 @@ export default function Form() {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("number", number);
-    formData.append("despcription", despcription);
+    formData.append("description", description);
     formData.append("role", role);
     formData.append("department", department);
     formData.append("image", image);
