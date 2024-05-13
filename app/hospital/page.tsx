@@ -21,7 +21,7 @@ export default async function Hospital() {
 
   const appointments = await prisma.appointment.findMany({
     where: {
-      hospitalEmail: user?.email,
+      hospitalEmail: user?.email as string,
     },
   });
 

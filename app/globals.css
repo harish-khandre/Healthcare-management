@@ -58,3 +58,13 @@
   }
 }
 
+body::-webkit-scrollbar {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #0047ab;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  cursor: grab;
+}

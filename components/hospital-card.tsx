@@ -40,8 +40,9 @@ const Hospitals = async () => {
   const blogData = await prisma.hospital.findMany();
 
   return (
-    <section className="text-gray-600 body-font">
+    <section id="hospitals" className="text-blue-700 body-font px-12 mb-8">
       <div className="container px-5 py-12 mx-auto">
+        <h1 className="text-4xl pb-12 font-bold">Our Collaborators</h1>
         <div className="flex flex-wrap -m-4">
           {blogData.map((data, index) => (
             <BlogCard

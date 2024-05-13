@@ -1,7 +1,6 @@
-import { signIn } from "@/auth";
 import UserButton from "./user-button";
-import { Button } from "./ui/button";
 import getSession from "@/lib/get-session";
+import { SignInButton } from "./signin-button";
 
 export default async function Navbar() {
   const session = await getSession();
@@ -21,33 +20,23 @@ export default async function Navbar() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            className="w-10 h-10 text-white p-2 bg-blue-700 rounded-full"
             viewBox="0 0 24 24"
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">xyz healthcare</span>
+          <span className="ml-3 text-xl">Health Care</span>
         </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <a className="mr-5 hover:text-gray-900">First Link</a>
           <a className="mr-5 hover:text-gray-900">Second Link</a>
           <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="mr-5 hover:text-gray-900">Chat with AI Doctor</a>
+          <a className="mr-5 hover:text-gray-900">Fourth Link</a>
         </nav>
         {user ? <UserButton user={user} /> : <SignInButton />}
       </div>
     </header>
   );
 }
-function SignInButton() {
-  return (
-    <form
-      action={async () => {
-        "use server";
-        await signIn();
-      }}
-    >
-      <Button type="submit">Sign In</Button>
-    </form>
-  );
+{
 }
