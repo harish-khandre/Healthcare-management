@@ -25,6 +25,11 @@ export default function ChatSheet() {
             </SheetDescription>
           </SheetHeader>
           <Chat />{" "}
+                    <SheetFooter>
+            <SheetClose asChild>
+              <Button>Close</Button>
+            </SheetClose>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>
