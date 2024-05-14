@@ -2,11 +2,14 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
+  SheetFooter,
+  SheetClose,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Chat from "./chat";
+import { Button } from "./ui/button";
 
 export default function ChatSheet() {
   return (
