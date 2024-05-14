@@ -1,11 +1,14 @@
-import { Mail, PhoneCall, PhoneIcon } from "lucide-react";
+import { Mail,  PhoneIcon } from "lucide-react";
 import React from "react";
 import Foot from "./foot";
 
 const ContactSection = () => {
   return (
     <>
-      <div className="h-72 w-full flex items-start justify-center p-24 flex-col gap-2">
+      <div
+        id="contact"
+        className="h-72 w-full flex items-start justify-center p-24 flex-col gap-2"
+      >
         <h1 className="text-4xl font-bold pb-4">Contact Info</h1>
         <p>MIT ADT University, Pune</p>
         <p>Loni Kalbhor</p>

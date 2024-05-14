@@ -11,7 +11,7 @@ const BlogCard = ({
   email,
 }: any) => {
   return (
-    <div className="p-4 md:w-1/3">
+    <div id="hospital" className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <Link href={`/h/${id}`}>
           <img

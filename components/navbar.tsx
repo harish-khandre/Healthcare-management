@@ -1,6 +1,7 @@
 import UserButton from "./user-button";
 import getSession from "@/lib/get-session";
 import { SignInButton } from "./signin-button";
+import ChatSheet from "./chat-sheet";
 
 export default async function Navbar() {
   const session = await getSession();
@@ -28,10 +29,18 @@ export default async function Navbar() {
           <span className="ml-3 text-xl">Health Care</span>
         </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">First Link</a>
-          <a className="mr-5 hover:text-gray-900">Second Link</a>
-          <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+          <a href="#about" className="mr-5 hover:text-gray-900">
+            About us
+          </a>
+          <a href="#hospital" className="mr-5 hover:text-gray-900">
+            Collaborators
+          </a>
+          <a href="#contact" className="mr-5 hover:text-gray-900">
+            Contact
+          </a>
+          <a className="mr-5 hover:text-gray-900">
+            <ChatSheet />
+          </a>
         </nav>
         {user ? <UserButton user={user} /> : <SignInButton />}
       </div>
