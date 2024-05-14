@@ -1,9 +1,7 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -14,7 +12,11 @@ export default function ChatSheet() {
   return (
     <div>
       <Sheet>
-        <SheetTrigger>AI Doctor</SheetTrigger>
+        <SheetTrigger>
+          <h1 className="border px-2 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition duration-500  delay-150 ease-in-out">
+            AI Doctor
+          </h1>
+        </SheetTrigger>
         <SheetContent side="bottom">
           <SheetHeader>
             <SheetTitle>AI Doctor</SheetTitle>
