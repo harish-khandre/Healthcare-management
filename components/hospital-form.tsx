@@ -62,7 +62,7 @@ export default function Form() {
       >
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's Name{" "}
+            Hospital&apos;s Name{" "}
           </label>
           <input
             type="text"
@@ -75,7 +75,7 @@ export default function Form() {
         </div>
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's description
+            Hospital&apos;s description
           </label>
           <input
             type="text"
@@ -88,7 +88,7 @@ export default function Form() {
         </div>
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's Department
+            Hospital&apos;s Department
           </label>
           <input
             type="text"
@@ -112,7 +112,7 @@ export default function Form() {
         </div>
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's Image
+            Hospital&apos;s Image
           </label>
           <input
             type="text"
@@ -125,7 +125,7 @@ export default function Form() {
         </div>
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's Contact Number
+            Hospital&apos;s Contact Number
           </label>
           <input
             type="text"
@@ -138,7 +138,7 @@ export default function Form() {
         </div>
         <div className="flex flex-col space-y-1.5">
           <label className="text-sm font-medium leading-none ">
-            Hospital's Email
+            Hospital&apos;s Email
           </label>
           <input
             type="text"

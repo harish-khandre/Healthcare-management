@@ -41,16 +41,17 @@ export default function Guidelines() {
               </ol>
               <br />
               <p>
-                The Security Rule defines "confidentiality" to mean that e-PHI
-                is not available or disclosed to unauthorized persons. The
-                Security Rule's confidentiality requirements support the Privacy
-                Rule's prohibitions against improper uses and disclosures of
-                PHI. The Security rule also promotes the two additional goals of
-                maintaining the integrity and availability of e-PHI. Under the
-                Security Rule, "integrity" means that e-PHI is not altered or
-                destroyed in an unauthorized manner. "Availability" means that
-                e-PHI is accessible and usable on demand by an authorized
-                person.
+                The Security Rule defines &quot;confidentiality&quot; to mean
+                that e-PHI is not available or disclosed to unauthorized
+                persons. The Security Rule&#39;s confidentiality requirements
+                support the Privacy Rule&#39;s prohibitions against improper
+                uses and disclosures of PHI. The Security rule also promotes the
+                two additional goals of maintaining the integrity and
+                availability of e-PHI. Under the Security Rule,
+                &quot;integrity&quot; means that e-PHI is not altered or
+                destroyed in an unauthorized manner. &quot;Availability&quot;
+                means that e-PHI is accessible and usable on demand by an
+                authorized person.
               </p>
               <br />
               <p>
@@ -60,8 +61,8 @@ export default function Guidelines() {
                 to analyze their own needs and implement solutions appropriate
                 for their specific environments. What is appropriate for a
                 particular covered entity will depend on the nature of the
-                covered entity's business, as well as the covered entity's size
-                and resources.
+                covered entity&#39;s business, as well as the covered
+                entity&#39;s size and resources.
               </p>
               <br />
               <p>
@@ -93,8 +94,8 @@ export default function Guidelines() {
                   The Health Insurance Portability and Accountability Act of
                   1996 (HIPAA) is a federal law that required the creation of
                   national standards to protect sensitive patient health
-                  information from being disclosed without the patient's consent
-                  or knowledge.
+                  information from being disclosed without the patient&#39;s
+                  consent or knowledge.
                 </p>
               </CardContent>
             </Card>
